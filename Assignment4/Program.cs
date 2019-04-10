@@ -22,7 +22,22 @@ namespace Assignment4
         }
         public void ReadTextFiles()
         {
-            using(StreamReader file = new StreamReader(")
+            using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
+            {
+                int counter = 0;
+                string ln;
+
+                while((ln = file.ReadLine()) != null)
+                {
+                    Console.WriteLine(ln);
+                }
+                file.Close();
+                Console.WriteLine($"File has {counter} lines.");
+            }
+        }
+        public int FindNumberOfBlankSpaces(string line)
+        {
+            int 
         }
     }
 }
