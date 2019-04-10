@@ -26,7 +26,7 @@ namespace Assignment4
             using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
                 int counter = 0;
-                string delim = " ,."; //maybe some more delimiters like ?! and so on
+                string delim = " ,."; 
                 string[] fields = null;
                 string line = null;
 
@@ -35,12 +35,10 @@ namespace Assignment4
                     line = file.ReadLine();
                     line.Trim();
                     fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                    counter += fields.Length; //and just add how many of them there is
+                    counter += fields.Length;
                 }
-
-
                 file.Close();
-                Console.WriteLine("The word count is {0}", counter);
+                Console.WriteLine($"The text file has {counter} words.");
             }
         }
         public int FindNumberOfBlankSpaces(string line)
