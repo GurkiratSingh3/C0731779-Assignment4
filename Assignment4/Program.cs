@@ -26,15 +26,19 @@ namespace Assignment4
             using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
                 int counter = 0;
+                int number = 0;
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
-                    if (line.Contains("Sea") && line.Contains("Fare"))
+                    if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
                     {
-                        counter++;
+                        int x = counter - 1;
+                        Console.WriteLine(x);
+                        number++;
                     }
-                   
+                    counter++;
                 }
+                Consol
 
                 file.Close();
             }
@@ -59,4 +63,4 @@ namespace Assignment4
             return countSpaces;
         }
     }
-    }
+   }
