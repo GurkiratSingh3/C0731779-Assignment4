@@ -26,13 +26,21 @@ namespace Assignment4
             using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
                 int counter = 0;
-                string ln;
-                while (file.ReadLine() != null)
+                string delim = " ,."; //maybe some more delimiters like ?! and so on
+                string[] fields = null;
+                string line = null;
+
+                while (!file.EndOfStream)
                 {
-                    counter++;
+                    line = file.ReadLine();
+                    line.Trim();
+                    fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                    counter += fields.Length; //and just add how many of them there is
                 }
+
+
                 file.Close();
-                Console.WriteLine($"File has {counter} lines.");
+                Console.WriteLine("The word count is {0}", counter);
             }
         }
         public int FindNumberOfBlankSpaces(string line)
