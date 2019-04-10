@@ -15,6 +15,7 @@ namespace Assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.ReadTextFiles();
         }
         public void Run()
         {
@@ -51,8 +52,8 @@ namespace Assignment4
                 {
                     countSpaces++;
                 }
-                return countSpaces;
             }
+            return countSpaces;
         }
     }
-}
+    }
