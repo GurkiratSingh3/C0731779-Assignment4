@@ -33,12 +33,11 @@ namespace Assignment4
                     if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
                     {
                         int x = counter - 1;
-                        Console.WriteLine(x);
                         number++;
                     }
                     counter++;
                 }
-                Consol
+                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
 
                 file.Close();
             }
