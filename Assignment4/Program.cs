@@ -27,10 +27,9 @@ namespace Assignment4
             {
                 int counter = 0;
                 string ln;
-
-                while ((ln = file.ReadLine()) != null)
+                while (file.ReadLine() != null)
                 {
-                    Console.WriteLine(ln);
+                    counter++;
                 }
                 file.Close();
                 Console.WriteLine($"File has {counter} lines.");
