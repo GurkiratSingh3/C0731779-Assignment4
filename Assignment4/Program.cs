@@ -43,10 +43,6 @@ namespace Assignment4
                         {
                             countSpaces++;
                         }
-                        if (char.IsWo)
-                        {
-                            countSpaces++;
-                        }
                     }
 
                 Console.WriteLine(countletters);
