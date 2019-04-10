@@ -37,18 +37,14 @@ namespace Assignment4
                         if (char.IsLetter(c))
                         {
                             countletters++;
-
                         }
                         if (char.IsWhiteSpace(c))
                         {
                             countSpaces++;
                         }
                     }
-
-                Console.WriteLine(countletters);
-                 
+                Console.WriteLine($"Total letters are {countletters}");           
                 file.Close();
-
             }
         }
     }
