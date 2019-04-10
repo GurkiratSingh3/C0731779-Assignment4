@@ -15,8 +15,7 @@ namespace Assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            
-            int a = 
+            p.FindNumberOfBlankSpaces();
         }
         public void Run()
         {
@@ -24,47 +23,30 @@ namespace Assignment4
         }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
-            {
-                int counter = 0;
-                int number = 0;
-                string line;
-                while ((line = file.ReadLine()) != null)
-                {
-                    if (line.Contains("Fare") == true && line.Contains("War") == false || line.Contains("fare") == true && line.Contains("War") == false)
-                    {
-                        int x = counter - 1;
-                       number++;
-                    }
-                    counter++;
-                }
-
-                Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
-                file.Close();
-            }
+            
         }
         public void FindNumberOfBlankSpaces()
         {
-           
-                int countletters = 0;
+            int countletters = 0;
             int countSpaces = 0;
-            string line;
+            
             using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
-                while ((line = file.ReadLine()) != null)
-                    foreach (char c in line)
+                string line = file.ReadLine();
+                foreach (char c in line)
                 {
                     if (char.IsLetter(c))
                     {
                         countletters++;
                     }
                     if (char.IsWhiteSpace(c))
+
                     {
                         countSpaces++;
                     }
                 }
-                Console.Write(countletters);
+                Console.WriteLine(countSpaces);
             }
         }
     }
-    }
+}
