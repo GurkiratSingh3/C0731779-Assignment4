@@ -27,7 +27,7 @@ namespace Assignment4
                 int counter = 0;
                 string ln;
 
-                while((ln = file.ReadLine()) != null)
+                while ((ln = file.ReadLine()) != null)
                 {
                     Console.WriteLine(ln);
                 }
@@ -37,7 +37,22 @@ namespace Assignment4
         }
         public int FindNumberOfBlankSpaces(string line)
         {
-            int 
+            int countletters = 0;
+            int countSpaces = 0;
+
+            foreach (char c in line)
+            {
+                if (char.IsLetter(c))
+                {
+                    countletters++;
+                }
+                if (char.IsWhiteSpace(c))
+
+                {
+                    countSpaces++;
+                }
+                return countSpaces;
+            }
         }
     }
 }
