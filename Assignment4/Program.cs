@@ -30,14 +30,14 @@ namespace Assignment4
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
-                    if (line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
+                    if (line.Contains("Fare")==true && line.Contains("War")==false || line.Contains("fare") == true && line.Contains("War") == false)
                     {
                         int x = counter - 1;
                         number++;
                     }
                     counter++;
                 }
-                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
+                Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
 
                 file.Close();
             }
