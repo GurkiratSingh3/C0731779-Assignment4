@@ -15,7 +15,7 @@ namespace Assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            p.ReadTextFiles();
+            p.FindNumberOfBlankSpaces();
         }
         public void Run()
         {
@@ -23,44 +23,36 @@ namespace Assignment4
         }
         public void ReadTextFiles()
         {
-            using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
-            {
-                int counter = 0;
-                string delim = " ,.";
-                string[] fields = null;
-                string line = null;
-                while (!file.EndOfStream)
-                {
-                    line = file.ReadLine();
-                    line.Trim();
-                    fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                    counter += fields.Length;
-                }
-                file.Close();
-
-                Console.WriteLine($"The text file has {counter} words.");
-            }
         }
         public void FindNumberOfBlankSpaces()
         {
             int countletters = 0;
             int countSpaces = 0;
-            
             using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
-                string line = file.ReadLine();
-                foreach (char c in line)
-                {
-                    if (char.IsLetter(c))
+                string line;
+                while ((line = file.ReadLine()) != null)
+                    foreach (char c in line)
                     {
-                        countletters++;
-                    }
-                    if (char.IsWhiteSpace(c))
+                        if (char.IsLetter(c))
+                        {
+                            countletters++;
 
-                    {
-                        countSpaces++;
+                        }
+                        if (char.IsWhiteSpace(c))
+                        {
+                            countSpaces++;
+                        }
+                        if (char.IsWo)
+                        {
+                            countSpaces++;
+                        }
                     }
-                }
+
+                Console.WriteLine(countletters);
+                 
+                file.Close();
+
             }
         }
     }
