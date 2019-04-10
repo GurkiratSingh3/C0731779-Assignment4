@@ -15,7 +15,8 @@ namespace Assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
-            p.ReadTextFiles();
+            
+            int a = 
         }
         public void Run()
         {
@@ -30,36 +31,40 @@ namespace Assignment4
                 string line;
                 while ((line = file.ReadLine()) != null)
                 {
-                    if (line.Contains("Fare")==true && line.Contains("War")==false || line.Contains("fare") == true && line.Contains("War") == false)
+                    if (line.Contains("Fare") == true && line.Contains("War") == false || line.Contains("fare") == true && line.Contains("War") == false)
                     {
                         int x = counter - 1;
-                        number++;
+                       number++;
                     }
                     counter++;
                 }
-                Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
 
+                Console.WriteLine($"The number of lines that contains *Fare* without the word *War* are {number}");
                 file.Close();
             }
         }
-        public int FindNumberOfBlankSpaces(string line)
+        public void FindNumberOfBlankSpaces()
         {
-            int countletters = 0;
+           
+                int countletters = 0;
             int countSpaces = 0;
-
-            foreach (char c in line)
+            string line;
+            using (StreamReader file = new StreamReader(@"U:\Users\731779\Beowulf.txt"))
             {
-                if (char.IsLetter(c))
+                while ((line = file.ReadLine()) != null)
+                    foreach (char c in line)
                 {
-                    countletters++;
+                    if (char.IsLetter(c))
+                    {
+                        countletters++;
+                    }
+                    if (char.IsWhiteSpace(c))
+                    {
+                        countSpaces++;
+                    }
                 }
-                if (char.IsWhiteSpace(c))
-
-                {
-                    countSpaces++;
-                }
+                Console.Write(countletters);
             }
-            return countSpaces;
         }
     }
-   }
+    }
